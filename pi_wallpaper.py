@@ -8,7 +8,7 @@ import math
 
 #todo:
 #
-#find a way to change the color dynamicaly with the current digit of pi.
+#make the size of the canvas whatever size i want it
 #
 #find a better way to calculate pi to the nth digit 
 #
@@ -48,21 +48,18 @@ def read_digits():
     return pi
 
 def main():
-    boxes = 20
     box_size = 10
     screen_width = 1920
     screen_height = 1070
     num = 2
 
-    #154x83
-
     win = GraphWin("pi poster", screen_width, screen_height)
     win.setBackground("grey")
     
     digits = read_digits()
-    for x in range(0, box_size * 65, box_size):
-        for y in range(0, box_size * 154, box_size):
-            position = (y, x)
+    for y in range(0, math.floor((box_size * (screen_height / box_size) - 10)), box_size):
+        for x in range(0, math.floor(box_size * (screen_width / box_size)), box_size):
+            position = (x, y)
             draw_rect(win, position, box_size, int(digits[num - 1]))
             print(num)
             num += 1
