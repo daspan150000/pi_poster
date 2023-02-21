@@ -3,8 +3,8 @@ This small project is inspired by Dan Shiffman of The Coding Train. this is my t
 
 
 # running the code
-Running "pi_wallpaper.py" will create an image the size of the 1920x1070 
-with the first 20353 digits of pi going from top left to bottom right. "3," not included. it will save the image as a PDF file. 
+Running "pi_wallpaper.py" will create an image the size of the 1920x1080 
+with the first 20737 digits of pi going from top left to bottom right. "3," not included. it will save the image as a PDF file. 
 
 # TODO
 [] Make the size of the canvas whatever size i want it

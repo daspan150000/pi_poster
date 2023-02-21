@@ -6,16 +6,6 @@ import calculate_pi as pical
 import math
 
 
-#todo:
-#
-#make the size of the canvas whatever size i want it
-#
-#find a better way to calculate pi to the nth digit 
-#
-#find a better way to convert from eps to pdf
-#or find a better way to save the image from the TK window.
-
-
 #secret
 #IPcJQgBSsoHfyojo
 
@@ -50,20 +40,20 @@ def read_digits():
 def main():
     box_size = 10
     screen_width = 1920
-    screen_height = 1070
+    screen_height = 1080
     num = 2
+
+    digits = read_digits()
 
     win = GraphWin("pi poster", screen_width, screen_height)
     win.setBackground("grey")
     
-    digits = read_digits()
-    for y in range(0, math.floor((box_size * (screen_height / box_size) - 10)), box_size):
+    for y in range(0, math.floor(box_size * (screen_height / box_size)), box_size):
         for x in range(0, math.floor(box_size * (screen_width / box_size)), box_size):
             position = (x, y)
             draw_rect(win, position, box_size, int(digits[num - 1]))
-            print(num)
             num += 1
-    
+    print(num - 1)
     # saves the current TKinter object in postscript format
     win.postscript(file="image.eps", colormode='color')
 
